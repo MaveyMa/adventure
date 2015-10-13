@@ -16,14 +16,14 @@ double climbing();
 
 int main()
 {
-    cout << climbing() << endl;
+    cout << scuba() << endl;
     return 0;
 }
 
 int numberOfPeople()
 {
     int num;
-    cout << "Welcome to High Adventure Travel Agency.\n How many people are you paying for today, including yourself?\n";
+    cout << "How many people are you paying for today, including yourself?\n";
     cin >> num;
     return num;
 }//END NUMBER OF PEOPLE FUNCTION
@@ -32,6 +32,7 @@ double climbing()
     int totalCharge, baseCharge, lessonCharge, rentalCharge;
     int lessonNum, rentalNum, numberOfDays;
     
+    cout << "You've selected Climbing!\n";
     baseCharge = 350 * numberOfPeople();
     
     cout << "How many days are you staying?" << endl;
@@ -50,3 +51,23 @@ double climbing()
     return totalCharge;
 
 }//END CLIMBING
+double scuba()
+{
+    int totalCharge, baseCharge, lessonCharge;
+    int lessonNum, numberOfDays;
+    
+    cout << "You've selected Scuba Diving!\n";
+    baseCharge = 1000 * numberOfPeople();
+    
+    cout << "How many days are you staying?" << endl;
+    cin >> numberOfDays;
+    
+    cout << "How many would like a scuba instructor? ($100 per person)" << endl;
+    cin >> lessonNum;
+    lessonCharge = lessonNum * 100;
+    
+    totalCharge = baseCharge + lessonCharge;
+    
+    return totalCharge;
+
+}//END SCUBA
