@@ -7,16 +7,16 @@
 using namespace std;
 
 char menu();
+int numberOfPeople(); //COUT QUESTION AND RETURNS # OF PEOPLE
 double climbing();
 double scuba();
 double skyDive();
 double spelunk();
-int numberOfPeople(); //COUT QUESTION AND RETURNS # OF PEOPLE
 double climbing();
 
 int main()
 {
-    cout << scuba() << endl;
+
     return 0;
 }
 
@@ -27,6 +27,7 @@ int numberOfPeople()
     cin >> num;
     return num;
 }//END NUMBER OF PEOPLE FUNCTION
+
 double climbing()
 {
     int totalCharge, baseCharge, lessonCharge, rentalCharge;
@@ -51,6 +52,7 @@ double climbing()
     return totalCharge;
 
 }//END CLIMBING
+
 double scuba()
 {
     int totalCharge, baseCharge, lessonCharge;
@@ -71,3 +73,49 @@ double scuba()
     return totalCharge;
 
 }//END SCUBA
+
+double skyDive()
+{
+    int totalCharge, baseCharge, lodgeCharge, innCharge;
+    int lodgeNum, innNum, numberOfDays;
+    
+    cout << "You've selected Sky Diving!\n";
+    baseCharge = 700 * numberOfPeople();
+    
+    cout << "How many days are you staying?" << endl;
+    cin >> numberOfDays;
+    
+    cout << "How many would like housing at Wilderness Lodge? ($65/day per person)" << endl;
+    cin >> lodgeNum;
+    lodgeCharge = lodgeNum * (65 * numberOfDays);
+    
+    cout << "How many would like housing at Luxury Inn? ($120/day per person)" << endl;
+    cin >> innNum;
+    innCharge = innNum * (120 * numberOfDays);
+    
+    totalCharge = baseCharge + lodgeCharge + innCharge;
+    
+    return totalCharge;
+
+}//END SKY DIVE
+
+double spelunk()
+{
+    int totalCharge, baseCharge, lessonCharge, rentalCharge;
+    int lessonNum, rentalNum, numberOfDays;
+    
+    cout << "You've selected Spelunking!\n";
+    baseCharge = 700 * numberOfPeople();
+    
+    cout << "How many days are you staying?" << endl;
+    cin >> numberOfDays;
+    
+    cout << "How many would like to rent equipment ($40/day per person)" << endl;
+    cin >> rentalNum;
+    rentalCharge = rentalNum * (40 * numberOfDays);
+    
+    totalCharge = baseCharge + rentalCharge;
+    
+    return totalCharge;
+
+}//END SPELUNK
